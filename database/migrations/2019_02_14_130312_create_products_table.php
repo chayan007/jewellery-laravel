@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->integer('old_price')->nullable();
             $table->integer('new_price')->nullable();
             $table->integer('days')->nullable();
-            $table->boolean('in_stock')->nullable();
+            $table->integer('in_stock')->nullable();
             $table->string('slug')->nullable();
             $table->string('category')->nullable();
             $table->timestamps();
