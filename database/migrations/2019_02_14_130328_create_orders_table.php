@@ -21,7 +21,6 @@ class CreateOrdersTable extends Migration
             $table->string('customer')->nullable();
             $table->string('user')->nullable();
             $table->date('expected')->nullable();
-            $table->string('total_price')->nullable();
             $table->timestamps();
         });
     }
