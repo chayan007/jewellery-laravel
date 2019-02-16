@@ -36,12 +36,14 @@ class ProductController extends Controller
             $path = $file->store('public/images/products');
             $product->img3 = $path;
         }
-
+        return back()->with('status', 'Product has been added !');
     }
 
     public function deleteProduct($id)
     {
-
+        $product = Product::where('id', $id)->firstOrFail();
+        $product->delete();
+        return back()->with('status', 'Product has been deleted !');
     }
 
     public function editProduct(Request $request, $id)
