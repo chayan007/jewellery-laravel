@@ -48,17 +48,20 @@ class ProductController extends Controller
 
     public function editProduct(Request $request, $id)
     {
-
+        $product = Product::where('id', $id)->firstOrFail();
     }
 
     public function showProducts()
     {
+        $products = Product::paginate(20);
+        return view('shop', ['products' => $products]);
 
     }
 
     public function singleProduct($slug)
     {
-
+        $product = Product::where('alug', $slug)->firstOrFail();
+        return view('single', ['product' => $product]);
     }
 
 }
