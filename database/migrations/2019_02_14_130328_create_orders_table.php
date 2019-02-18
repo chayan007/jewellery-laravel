@@ -17,10 +17,13 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->string('order')->default('In Cart')->nullable();
             $table->string('status')->nullable();
-            $table->string('product')->nullable();
-            $table->string('customer')->nullable();
-            $table->string('user')->nullable();
+            $table->unsignedInteger('product');
+            $table->foreign('product')->references('id')->on('products');
+            $table->unsignedInteger('customer')->nullable();
+            $table->foreign('customer')->references('id')->on('customers');            $table->unsignedInteger('user');
+            $table->foreign('user')->references('id')->on('users');
             $table->date('expected')->nullable();
+            $table->string('token')->nullable();
             $table->timestamps();
         });
     }

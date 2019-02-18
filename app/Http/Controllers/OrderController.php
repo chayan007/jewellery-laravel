@@ -2,11 +2,65 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
+use App\Order;
+use App\Product;
+use App\User;
+use Carbon\Carbon;
+use function GuzzleHttp\Psr7\str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    public function addToCart()
-    {}
+    public function addToCart($id)
+    {
+        $user = Auth::user()->id;
+        $product = Product::where('id', $id)->firstOrFail()->id;
+        $order = new Order();
+        $order->status = 1;
+        $order->product = $product;
+        $order->user = $user;
+        $order->save();
+        return back();
+    }
+
+    public function addToOrder(Request $request, $id)
+    {
+        //store Customer details
+        $customer = new Customer();
+        $customer->name = $request->name;
+        $customer->email = $request->email;
+        $customer->phone = $request->phone;
+        $customer->address = $request->address;
+        $customer->save();
+        //add customer instance to Orders
+        $orders = Order::where('user', $id)->get();
+        foreach ($orders as $order)
+        {
+            $order->order = "Order Placed";
+            $order->customer = Customer::where('email', $request->email)->firstOrFail()->id;
+            $order->expected = Carbon::now()->addDays(7);
+            $number = $request->name.' '.str(rand(0,255));
+            $order->token = str_slug($number,'-');
+            $order->save();
+        }
+        return back();
+    }
+
+    public function showOrders()
+    {
+        $orders = Order::where('order', 'Order Placed')->get();
+        return view('orders', ['orders' => $orders]);
+    }
+
+    public function showOrderToUser()
+    {
+        $orders = Order::where([
+            ['order', 'Order Placed'],
+            ['user', Auth::user()->id]
+        ])->get();
+        return view('orders', ['orders' => $orders]);
+    }
 
 }
