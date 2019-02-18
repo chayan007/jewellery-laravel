@@ -60,7 +60,7 @@ class ProductController extends Controller
 
     public function singleProduct($slug)
     {
-        $product = Product::where('alug', $slug)->firstOrFail();
+        $product = Product::where('slug', $slug)->firstOrFail();
         return view('single', ['product' => $product]);
     }
 
