@@ -63,4 +63,13 @@ class OrderController extends Controller
         return view('orders', ['orders' => $orders]);
     }
 
+    public function showCartToUser()
+    {
+        $orders = Order::where([
+            ['order', 'In Cart'],
+            ['user', Auth::user()->id]
+        ])->get();
+        return view('orders', ['orders' => $orders]);
+    }
+
 }
