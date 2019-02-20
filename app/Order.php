@@ -9,5 +9,5 @@ class Order extends Model
 {
     use Notifiable;
 
-    protected $fillable = ['id', 'order', 'status', 'product', 'customer', 'user', 'expected',];
+    protected $fillable = ['id', 'order', 'status', 'quantity', 'product', 'customer', 'user', 'expected',];
 }

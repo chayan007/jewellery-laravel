@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->string('order')->default('In Cart')->nullable();
             $table->string('status')->nullable();
+            $table->integer('quantity')->default(1);
             $table->unsignedInteger('product');
             $table->foreign('product')->references('id')->on('products');
             $table->unsignedInteger('customer')->nullable();

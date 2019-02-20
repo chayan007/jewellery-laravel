@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Customer;
 use App\Order;
 use App\Product;
-use App\User;
 use Carbon\Carbon;
 use function GuzzleHttp\Psr7\str;
 use Illuminate\Http\Request;
@@ -25,16 +24,19 @@ class OrderController extends Controller
         return back();
     }
 
-    public function addToOrder(Request $request, $id)
+    public function addCustomer(Request $request)
     {
-        //store Customer details
         $customer = new Customer();
         $customer->name = $request->name;
         $customer->email = $request->email;
         $customer->phone = $request->phone;
         $customer->address = $request->address;
         $customer->save();
-        //add customer instance to Orders
+        return view();
+    }
+
+    public function addToOrder(Request $request, $id)
+    {
         $orders = Order::where('user', $id)->get();
         foreach ($orders as $order)
         {

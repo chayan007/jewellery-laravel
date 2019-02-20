@@ -11,6 +11,7 @@ class AgentController extends Controller
     public function profile(Request $request)
     {
         $user = User::where('id', Auth::user()->id)->first();
+        //change profile details
     }
 
     public function getUsers()
