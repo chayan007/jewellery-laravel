@@ -4,7 +4,7 @@
             <div class="float-right">
                 <ul class="right_side">
                     <li>
-                        <a href="login.html"> <!-- Home page-->
+                        <a href="/login"> <!-- Home page-->
                             Agent Login/Register
                         </a>
                     </li>
@@ -27,8 +27,8 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="index.html">
-                    <img src="img/logo.png" alt="">
+                <a class="navbar-brand logo_h" href="/">
+                    <img src="{{ asset('front/img/logo.png') }}" alt="">
                 </a>
                 <!-- Search not needed
                 <div class="nav-item search-box">
@@ -87,10 +87,10 @@
                                 </li>
                                 -->
                                 <li class="nav-item submenu dropdown">
-                                    <a href="contact.html" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
+                                    <a href="/about" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
                                 </li>
                                 <li  class="nav-item submenu dropdown">
-                                    <a href="contact.html" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <!-- Home page-->
+                                    <a href="/contact" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <!-- Home page-->
                                         Contact Us
                                     </a>
                                 </li>
