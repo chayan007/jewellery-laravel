@@ -12,8 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('public.pages.index');
 });
+Route::view('/contact', 'public.pages.contact');
 
 Auth::routes();
 
