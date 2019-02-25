@@ -1,7 +1,18 @@
+@section('js')
+    <!-- contact js -->
+    <script src="{{ asset('front/js/jquery.form.js') }}"></script>
+    <script src="{{ asset('front/js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('front/js/contact.js') }}"></script>
+    <!--gmaps Js-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+    <script src="{{ asset('front/js/gmaps.min.js') }}"></script>
+    <script src="{{ asset('front/js/theme.js') }}"></script>
+@endsection
 @extends('public.layouts.public')
 @section('title', 'Contact Us')
     @section('url', '/contact')
         @section('page', 'Contact')
+            @include('public.includes.bread')
             @section('content')
                 <!--================Contact Area =================-->
                 <section class="contact_area p_120">

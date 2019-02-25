@@ -309,4 +309,5 @@
                 </div>
             </div>
         </section>
+        @include('public.includes.subscription')
 @endsection

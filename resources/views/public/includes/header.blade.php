@@ -5,7 +5,7 @@
                 <ul class="right_side">
                     <li>
                         <a href="/login"> <!-- Home page-->
-                            Agent Login/Register
+                           Login/Register
                         </a>
                     </li>
                     <!-- Not req on Home page<li>

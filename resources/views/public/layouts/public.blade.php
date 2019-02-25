@@ -8,8 +8,6 @@
 
 @yield('content')
 
-@include('public.includes.subscription')
-
 @include('public.includes.footer')
 
 @include('public.includes.foot')
