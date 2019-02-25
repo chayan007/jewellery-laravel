@@ -1,3 +1,4 @@
+@extends('public.layouts.public')
 @section('js')
     <!-- contact js -->
     <script src="{{ asset('front/js/jquery.form.js') }}"></script>
@@ -8,7 +9,6 @@
     <script src="{{ asset('front/js/gmaps.min.js') }}"></script>
     <script src="{{ asset('front/js/theme.js') }}"></script>
 @endsection
-@extends('public.layouts.public')
 @section('title', 'Contact Us')
     @section('url', '/contact')
         @section('page', 'Contact')

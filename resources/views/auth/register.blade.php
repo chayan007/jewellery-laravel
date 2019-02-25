@@ -12,18 +12,27 @@
                     <div class="login_box_img">
                         <img class="img-fluid" src="{{ asset('front/img/login.jpg') }}" alt="">
                         <div class="hover">
-                            <h4>Want to be our Agnet/Sales Rep?</h4>
-                            <p>Register now to represent us and step forward to your new life.</p>
-                            <a class="main_btn" href="registration.html">Register Now</a>
+                            <h4>Already Registered</h4>
+                            <p>Login here</p>
+                            <a class="main_btn" href="/login">Goto Login</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="login_form_inner">
-                        <h3>Log in to enter</h3>
-                        <form class="row login_form" action="/login" method="post" id="contactForm" novalidate="novalidate">
+                    <div class="login_form_inner reg_form">
+                        <h3>Create an Account</h3>
+                        <form class="row login_form" action="/register" method="post" id="contactForm" novalidate="novalidate">
+                            @csrf
                             <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="name" name="email" placeholder="Email">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -31,10 +40,18 @@
                                 @endif
                             </div>
                             <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="name" name="password" placeholder="Password">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                                 @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <input type="password" class="form-control" id="pass" name="password_confirmation" placeholder="Confirm password">
+                                @if ($errors->has('password_confirmation'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -45,8 +62,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12 form-group">
-                                <button type="submit" value="submit" class="btn submit_btn">Log In</button>
-                                <a href="/password/reset">Forgot Password?</a>
+                                <button type="submit" value="submit" class="btn submit_btn">Register</button>
                             </div>
                         </form>
                     </div>
