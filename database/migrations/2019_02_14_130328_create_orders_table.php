@@ -21,7 +21,8 @@ class CreateOrdersTable extends Migration
             $table->unsignedInteger('product');
             $table->foreign('product')->references('id')->on('products');
             $table->unsignedInteger('customer')->nullable();
-            $table->foreign('customer')->references('id')->on('customers');            $table->unsignedInteger('user');
+            $table->foreign('customer')->references('id')->on('customers');
+            $table->unsignedInteger('user');
             $table->foreign('user')->references('id')->on('users');
             $table->date('expected')->nullable();
             $table->string('token')->nullable();
