@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('public.pages.index');
 });
 Route::view('/contact', 'public.pages.contact');
+Route::view('/contact', 'public.pages.orders');
+Route::view('/contact', 'public.pages.orderDetails');
+Route::view('/contact', 'public.pages.shop');
+Route::view('/contact', 'public.pages.single');
+Route::view('/contact', 'public.pages.cart');
+Route::view('/contact', 'public.pages.account');
+Route::view('/contact', 'public.pages.checkout');
 
 Auth::routes();
 
@@ -23,7 +30,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'admin'], function () {
   Route::get('/login', 'AdminAuth\LoginController@showLoginForm')->name('login');
   Route::post('/login', 'AdminAuth\LoginController@login');
-  Route::post('/logout', 'AdminAuth\LoginController@logout')->name('logout');
+  Route::get('/logout', 'AdminAuth\LoginController@logout')->name('logout');
 
   Route::get('/register', 'AdminAuth\RegisterController@showRegistrationForm')->name('register');
   Route::post('/register', 'AdminAuth\RegisterController@register');
