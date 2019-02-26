@@ -1,6 +1,6 @@
 @extends('public.layouts.public')
 @section('title', 'Order Details')
-@include('public.includes.bread')
+@extends('public.includes.bread')
 @section('url', '/orderDetails')
 @section('page', 'Order Details')
 @section('content')
@@ -180,5 +180,6 @@
         </div>
     </section>
     <!--================End Order Details Area =================-->
+    @include('public.includes.subscription')
+
 @endsection
-@include('public.includes.subscription')

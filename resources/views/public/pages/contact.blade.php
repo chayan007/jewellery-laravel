@@ -12,7 +12,7 @@
 @section('title', 'Contact Us')
     @section('url', '/contact')
         @section('page', 'Contact')
-            @include('public.includes.bread')
+            @extends('public.includes.bread')
             @section('content')
                 <!--================Contact Area =================-->
                 <section class="contact_area p_120">

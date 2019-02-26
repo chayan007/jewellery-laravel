@@ -1,6 +1,6 @@
 @extends('public.layouts.public')
 @section('title', 'Cart')
-@include('public.includes.bread')
+@extends('public.includes.bread')
 @section('url', '/cart')
 @section('page', 'Cart')
 @section('content')
@@ -159,5 +159,6 @@
         </div>
     </section>
     <!--================End Cart Area =================-->
+    @include('public.includes.subscription')
+
 @endsection
-@include('public.includes.subscription')

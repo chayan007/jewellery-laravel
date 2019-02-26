@@ -1,6 +1,6 @@
 @extends('public.layouts.public')
 @section('title', 'Check Out')
-@include('public.includes.bread')
+@extends('public.includes.bread')
 @section('url', '/checkout')
 @section('page', 'Check Out')
 @section('content')
@@ -202,6 +202,6 @@
         </div>
     </section>
     <!--================End Checkout Area =================-->
+    @include('public.includes.subscription')
 
 @endsection
-@include('public.includes.subscription')

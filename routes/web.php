@@ -15,13 +15,13 @@ Route::get('/', function () {
     return view('public.pages.index');
 });
 Route::view('/contact', 'public.pages.contact');
-Route::view('/contact', 'public.pages.orders');
-Route::view('/contact', 'public.pages.orderDetails');
-Route::view('/contact', 'public.pages.shop');
-Route::view('/contact', 'public.pages.single');
-Route::view('/contact', 'public.pages.cart');
-Route::view('/contact', 'public.pages.account');
-Route::view('/contact', 'public.pages.checkout');
+Route::view('/order', 'public.pages.orders');
+Route::view('/order-details', 'public.pages.orderDetails');
+Route::view('/shop', 'public.pages.shop');
+Route::view('/single', 'public.pages.single');
+Route::view('/cart', 'public.pages.cart');
+Route::view('/account', 'public.pages.account');
+Route::view('/checkout', 'public.pages.checkout');
 
 Auth::routes();
 
