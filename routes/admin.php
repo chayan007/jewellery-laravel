@@ -15,6 +15,8 @@ Route::post('/addCategory', 'CategoryController@addCategory');
 Route::post('/updateProduct/{id}', 'ProductController@editProduct');
 Route::post('/updateCategory/{id}', 'CategoryController@updateCategory');
 Route::get('/user', 'AdminController@getUsers');
+Route::get('/addProduct', 'AdminController@addProduct');
+Route::get('/addCategory', 'AdminController@addCategory');
 Route::get('/product', 'ProductController@getProducts');
 Route::get('/order', 'OrderController@showOrders');
 Route::get('/category', 'CategoryController@getCategories');

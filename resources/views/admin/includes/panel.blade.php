@@ -5,8 +5,8 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="./">Jewellery</a>
-            <a class="navbar-brand hidden" href="./"><i class="fa fa-signal"></i></a>
+            <a class="navbar-brand" href="/">Jewellery</a>
+            <a class="navbar-brand hidden" href="/"><i class="fa fa-signal"></i></a>
         </div>
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -19,8 +19,8 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Products</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-id-badge"></i><a href="/addProduct">Add</a></li>
-                        <li><i class="fa fa-exclamation-triangle"></i><a href="/product">Delete</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="/admin/addProduct">Add</a></li>
+                        <li><i class="fa fa-exclamation-triangle"></i><a href="/admin/product">Delete</a></li>
                     </ul>
                 </li>
 
@@ -28,8 +28,8 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Categories</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-balance-scale"></i><a href="/addCategory">Add</a></li>
-                        <li><i class="menu-icon fa fa-exclamation-triangle"></i><a href="/category">Delete</a></li>
+                        <li><i class="menu-icon fa fa-balance-scale"></i><a href="/admin/addCategory">Add</a></li>
+                        <li><i class="menu-icon fa fa-exclamation-triangle"></i><a href="/admin/category">Delete</a></li>
                     </ul>
                 </li>
 
@@ -37,8 +37,8 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Categories</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-balance-scale"></i><a href="/addCategory">Active Orders</a></li>
-                        <li><i class="menu-icon fa fa-exclamation-triangle"></i><a href="/category">Rejected Orders</a></li>
+                        <li><i class="menu-icon fa fa-balance-scale"></i><a href="/admin/addCategory">Active Orders</a></li>
+                        <li><i class="menu-icon fa fa-exclamation-triangle"></i><a href="/admin/category">Rejected Orders</a></li>
                     </ul>
                 </li>
 
@@ -46,7 +46,7 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Categories</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-balance-scale"></i><a href="/addCategory">Check Agents</a></li>
+                        <li><i class="menu-icon fa fa-balance-scale"></i><a href="/admin/addCategory">Check Agents</a></li>
                     </ul>
                 </li>
 
@@ -54,12 +54,12 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Categories</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-balance-scale"></i><a href="/addCategory">Check Requests</a></li>
+                        <li><i class="menu-icon fa fa-balance-scale"></i><a href="/admin/addCategory">Check Requests</a></li>
                     </ul>
                 </li>
 
                 <li class="active">
-                    <a href="/logout"> <i class="menu-icon fa fa-sign-in"></i>Log Out </a>
+                    <a href="/admin/logout"> <i class="menu-icon fa fa-sign-in"></i>Log Out </a>
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->

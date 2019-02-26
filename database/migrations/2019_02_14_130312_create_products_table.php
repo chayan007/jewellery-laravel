@@ -25,7 +25,8 @@ class CreateProductsTable extends Migration
             $table->integer('days')->nullable();
             $table->integer('in_stock')->nullable();
             $table->string('slug')->nullable();
-            $table->string('category')->nullable();
+            $table->unsignedInteger('category');
+            $table->foreign('category')->references('id')->on('categories');
             $table->timestamps();
         });
     }
