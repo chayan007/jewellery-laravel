@@ -52,8 +52,14 @@ class OrderController extends Controller
 
     public function showOrders()
     {
-        $orders = Order::where('order', 'Order Placed')->get();
-        return view('orders', ['orders' => $orders]);
+        $orders = Order::where('order', 'Order Placed')->paginate(20);
+        return view('admin.Orders', ['orders' => $orders]);
+    }
+
+    public function showOrderReject()
+    {
+        $orders = Order::where('order', 'Completed')->paginate(20);
+        return view('admin.OrderReject', ['orders' => $orders]);
     }
 
     public function showOrderToUser()

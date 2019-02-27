@@ -15,6 +15,10 @@ class CreateRefundsTable extends Migration
     {
         Schema::create('refunds', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('order');
+            $table->unsignedInteger('user');
+            $table->foreign('user')->references('id')->on('users');
+            $table->text('reason');
             $table->timestamps();
         });
     }

@@ -1,5 +1,5 @@
 @extends('admin.layouts.admin')
-@section('page', 'Orders')
+@section('page', 'Completed')
 @section('content')
     @if(session('update'))
         <div class="alert alert-success" role="alert">
@@ -14,7 +14,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <strong class="card-title">List of Products</strong>
+                <strong class="card-title">List of Orders</strong>
             </div>
             <div class="card-body">
                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
