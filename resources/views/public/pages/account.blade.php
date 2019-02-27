@@ -13,12 +13,12 @@
                 <div class="detail_col">
                     <div class="agent-name">
 
-                        <span>Name:</span>	<h3>John Lovasky</h3>
+                        <span>Name:</span>	<h3>{{ Auth::user()->name }}</h3>
                     </div>
                     <div class="referrel-code">
                         <span>Agent Id:</span>
                         <h3>
-                            204511
+                            {{ Auth::user()->referral_number }}
                         </h3>
                     </div>
                     <a class="genric-btn danger radius" href="/deleteAccount">Delete Account</a>
