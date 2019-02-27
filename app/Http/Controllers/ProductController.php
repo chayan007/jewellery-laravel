@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class ProductController extends Controller
         $product->old_price = $request->old_price;
         $product->new_price = $request->new_price;
         $product->days = $request->days;
-        $product->in_stock = $request->in_stock;
+        $product->in_stock = 1;
         $product->slug = str_slug($product->name, '-');
         $product->category = $request->category;
         if ($request->hasFile('img1'))
@@ -36,6 +37,13 @@ class ProductController extends Controller
             $path = $file->store('public/images/products');
             $product->img3 = $path;
         }
+        if ($request->hasFile('brochure'))
+        {
+            $file = $request->brochure;
+            $path = $file->store('public/documents/products');
+            $product->brochure = $path;
+        }
+        $product->save();
         return back()->with('status', 'Product has been added !');
     }
 
@@ -62,6 +70,13 @@ class ProductController extends Controller
     {
         $product = Product::where('slug', $slug)->firstOrFail();
         return view('single', ['product' => $product]);
+    }
+
+    public function getProducts()
+    {
+        $products = Product::paginate(20);
+        $categories = Category::all();
+        return view('admin.Products', ['products' => $products, 'categories' => $categories]);
     }
 
 }

@@ -24,7 +24,7 @@
                         <th>Name</th>
                         <th>Description</th>
                         <th>Category</th>
-                        <th>Company</th>
+                        <th>Days</th>
                         <th>Price</th>
                         <th>Update</th>
                         <th>Delete</th>
@@ -35,10 +35,10 @@
                     <tr>
                         <td> {{ $loop->iteration }}</td>
                         <td>{{ $product->name }}</td>
-                        <td>{{ $product->description }}</td>
+                        <td>{{ $product->desc }}</td>
                         <td>{{ DB::table('categories')->where('id', $product->category)->first()->category }}</td>
-                        <td>{{ DB::table('companies')->where('id', $product->company)->first()->company }}</td>
-                        <td>{{ $product->price }}</td>
+                        <td>{{ $product->days }}</td>
+                        <td>{{ $product->new_price }}</td>
                         <td><!-- Button trigger modal -->
                             <button type="button" class="btn btn-outline-warning btn-sm" data-toggle="modal"
                                     data-target="#modelId{{ $product->id }}">
@@ -83,17 +83,6 @@
                                                     </div>
                                                 </div>
                                                 <div class="row form-group">
-                                                    <div class="col col-md-3"><label for="selectLg" class=" form-control-label">Company</label></div>
-                                                    <div class="col-12 col-md-9">
-                                                        <select name="selectLg" id="selectLg" class="form-control-lg form-control">
-                                                            <option value="#">Please select</option>
-                                                            @foreach($companies as $company)
-                                                                <option value="{{ $company->id }}">{{ $company->company }}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="row form-group">
                                                     <div class="col col-md-3"><label for="file-input" class=" form-control-label">Image</label></div>
                                                     <div class="col-12 col-md-9"><input type="file" id="file-input" name="image1" class="form-control-file"></div>
                                                 </div>
@@ -104,10 +93,6 @@
                                                 <div class="row form-group">
                                                     <div class="col col-md-3"><label for="file-input" class=" form-control-label">Image</label></div>
                                                     <div class="col-12 col-md-9"><input type="file" id="file-input" name="image3" class="form-control-file"></div>
-                                                </div>
-                                                <div class="row form-group">
-                                                    <div class="col col-md-3"><label for="file-input" class=" form-control-label">Brochure</label></div>
-                                                    <div class="col-12 col-md-9"><input type="file" id="file-input" name="brochure" class="form-control-file"></div>
                                                 </div>
                                                 <button type="submit" class="btn btn-success btn-block">
                                                     Submit

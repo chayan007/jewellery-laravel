@@ -11,7 +11,7 @@
             <strong>Add Category</strong>
         </div>
         <div class="card-body card-block">
-            <form action="/addCategory" method="post" enctype="multipart/form-data" class="form-horizontal">
+            <form action="/admin/addCategory" method="post" enctype="multipart/form-data" class="form-horizontal">
                 @csrf
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Category </label></div>

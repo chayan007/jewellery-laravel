@@ -35,26 +35,26 @@
 
                 <h3 class="menu-title">Orders</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Categories</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Orders</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-balance-scale"></i><a href="/admin/addCategory">Active Orders</a></li>
-                        <li><i class="menu-icon fa fa-exclamation-triangle"></i><a href="/admin/category">Rejected Orders</a></li>
+                        <li><i class="menu-icon fa fa-balance-scale"></i><a href="/admin/active">Active Orders</a></li>
+                        <li><i class="menu-icon fa fa-exclamation-triangle"></i><a href="/admin/reject">Completed Orders</a></li>
                     </ul>
                 </li>
 
                 <h3 class="menu-title">Agents</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Categories</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Agents</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-balance-scale"></i><a href="/admin/addCategory">Check Agents</a></li>
+                        <li><i class="menu-icon fa fa-balance-scale"></i><a href="/admin/agents">Check Agents</a></li>
                     </ul>
                 </li>
 
                 <h3 class="menu-title">Returns</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Categories</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Returns</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-balance-scale"></i><a href="/admin/addCategory">Check Requests</a></li>
+                        <li><i class="menu-icon fa fa-balance-scale"></i><a href="/admin/returns">Check Requests</a></li>
                     </ul>
                 </li>
 

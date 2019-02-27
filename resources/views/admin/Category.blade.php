@@ -51,7 +51,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="container-fluid">
-                                                <form action="/updateCategory/{{ $category->id }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                                <form action="/admin/updateCategory/{{ $category->id }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                                                     <div class="row form-group">
                                                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Category </label></div>
                                                         <div class="col-12 col-md-9"><input type="text" id="text-input" name="name" placeholder="Category" class="form-control"><small class="form-text text-muted">Just the Product Name</small></div>
