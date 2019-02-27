@@ -12,12 +12,13 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    public function addToCart($id)
+    public function addToCart($id, Request $request)
     {
         $user = Auth::user()->id;
         $product = Product::where('id', $id)->firstOrFail()->id;
         $order = new Order();
         $order->status = 1;
+        $order->quantity = $request->quantity;
         $order->product = $product;
         $order->user = $user;
         $order->save();
