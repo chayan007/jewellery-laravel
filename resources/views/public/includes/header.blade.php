@@ -3,11 +3,20 @@
         <div class="container-fluid">
             <div class="float-right">
                 <ul class="right_side">
+                    @guest
                     <li>
                         <a href="/login"> <!-- Home page-->
-                           Login/Register
+                            Login/Register
                         </a>
                     </li>
+                    @endguest
+                    @auth
+                    <li>
+                        <a href="/logout"> <!-- Home page-->
+                            Logout
+                        </a>
+                    </li>
+                    @endauth
                     <!-- Not req on Home page<li>
                         <a href="#">
                             My Account
@@ -94,6 +103,23 @@
                                         Contact Us
                                     </a>
                                 </li>
+                                @auth
+                                <li  class="nav-item submenu dropdown">
+                                    <a href="/shop" class="nav-link"> <!-- Home page-->
+                                        Shop
+                                    </a>
+                                </li>
+                                <li  class="nav-item submenu dropdown">
+                                    <a href="/orders" class="nav-link"> <!-- Home page-->
+                                        Orders
+                                    </a>
+                                </li>
+                                <li  class="nav-item submenu dropdown">
+                                    <a href="/cart" class="nav-link"> <!-- Home page-->
+                                        Cart
+                                    </a>
+                                </li>
+                                @endauth
                                 <!-- Not req on Home page
                                 <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">New Arrivals</a>

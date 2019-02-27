@@ -8,7 +8,13 @@
     <!--================Cart Area =================-->
     <section class="cart_area">
         <div class="container">
-            <div class="cart_inner">
+            @if(session('status'))
+                <div class="alert alert-success" role="alert">
+                    <strong>{{ session('status') }}</strong>
+                </div>
+            @endif
+            @php $price = 0; @endphp
+                <div class="cart_inner">
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -20,61 +26,65 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>
-                                <div class="media">
-                                    <div class="d-flex">
-                                        <img src="{{ asset('front/img/product/single-product/cart-1.jpg') }}" alt="">
+                        @foreach($orders as $order)
+                            <tr>
+                                <td>
+                                    <div class="media">
+                                        <div class="d-flex">
+                                            <img src="{{ asset('front/img/product/single-product/cart-1.jpg') }}" alt="Product Image">
+                                        </div>
+                                        <div class="media-body">
+                                            <p>{{ DB::table('products')->where('id', $order->product)->first()->name }} </p>
+                                        </div>
                                     </div>
-                                    <div class="media-body">
-                                        <p>Minimalistic shop for multipurpose use</p>
+                                </td>
+                                <td>
+                                    <h5>&#8377;@php echo ( DB::table('products')->where('id', $order->product)->first()->new_price);  @endphp</h5>
+                                </td>
+                                <td>
+                                    <form action="/updateCart/{{ $order->id }}" method="POST">
+                                    <div class="product_count">                                         @csrf
+                                        <input type="text" name="quantity" id="sst" maxlength="12" value="{{ $order->quantity }}" title="Quantity:" class="input-text qty">
+                                        <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
+                                                class="increase items-count" type="button">
+                                            <i class="lnr lnr-chevron-up"></i>
+                                        </button>
+                                        <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) && sst > 0 ) result.value--;return false;"
+                                                class="reduced items-count" type="button">
+                                            <i class="lnr lnr-chevron-down"></i>
+                                        </button>
                                     </div>
-                                </div>
-                            </td>
-                            <td>
-                                <h5>&#8377;360.00</h5>
-                            </td>
-                            <td>
-                                <div class="product_count">
-                                    <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
-                                    <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                            class="increase items-count" type="button">
-                                        <i class="lnr lnr-chevron-up"></i>
-                                    </button>
-                                    <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) && sst > 0 ) result.value--;return false;"
-                                            class="reduced items-count" type="button">
-                                        <i class="lnr lnr-chevron-down"></i>
-                                    </button>
-                                </div>
-                            </td>
-                            <td>
-                                <h5>&#8377;720.00</h5>
-                            </td>
-                        </tr>
-                        <tr class="bottom_button">
-                            <td>
-                                <a class="gray_btn" href="#">Update Cart</a>
+                                </td>
+                                <td>
+                                    <h5>&#8377;@php echo $pro_price = ($order->quantity * DB::table('products')->where('id', $order->product)->first()->new_price);  @endphp</h5>
+                                </td>
+                            </tr>
+                            <tr class="bottom_button">
+                                <td>
+                                    <button type="submit" class="gray_btn">Update</button>
+                                </td>
+                                </form>
+                                @php $price = $price + $pro_price @endphp
+                                <!-- Not Needed
+                                <td>
+                                    <div class="cupon_text">
+                                            <input type="text" placeholder="Coupon Code">
+                                            <a class="main_btn" href="#">Apply</a>
+                                            <a class="gray_btn" href="#">Close Coupon</a>
+                                        </div>
+                                </td>-->
+                                <td>
 
-                            </td>
-                            <!-- Not Needed
-                            <td>
-                                <div class="cupon_text">
-                                        <input type="text" placeholder="Coupon Code">
-                                        <a class="main_btn" href="#">Apply</a>
-                                        <a class="gray_btn" href="#">Close Coupon</a>
-                                    </div>
-                            </td>-->
-                            <td>
+                                </td>
+                                <td>
 
-                            </td>
-                            <td>
+                                </td>
+                                <td>
 
-                            </td>
-                            <td>
+                                </td>
 
-                            </td>
-
-                        </tr>
+                            </tr>
+                        @endforeach
                         <tr>
                             <td>
 
@@ -86,7 +96,7 @@
                                 <h5>Subtotal</h5>
                             </td>
                             <td>
-                                <h5>&#8377;2160.00</h5>
+                                <h5>&#8377;@php echo $price; @endphp</h5>
                             </td>
                         </tr>
                         <!--  Not Needed

@@ -78,7 +78,15 @@ class OrderController extends Controller
             ['order', 'In Cart'],
             ['user', Auth::user()->id]
         ])->get();
-        return view('orders', ['orders' => $orders]);
+        return view('public.pages.cart', ['orders' => $orders]);
+    }
+
+    public function updateCart($id, Request $request)
+    {
+        $order = Order::where('id', $id)->first();
+        $order->quantity = $request->quantity;
+        $order->save();
+        return back()->with('status', 'Your cart has been updated !');
     }
 
 }
