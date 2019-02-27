@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b25a8343-59c2-4ff8-a647-2b2ae72bb0b9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/public/includes/header.blade.php" afterPath="$PROJECT_DIR$/resources/views/public/includes/header.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/public/pages/cart.blade.php" afterPath="$PROJECT_DIR$/resources/views/public/pages/cart.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/public/pages/single.blade.php" afterPath="$PROJECT_DIR$/resources/views/public/pages/single.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -69,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="single.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="single.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/public/pages/single.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+            <state relative-caret-position="381">
+              <caret line="94" column="41" lean-forward="false" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="41" />
               <folding>
                 <element signature="e#3187#3193#0#HTML" expanded="true" />
               </folding>
@@ -93,7 +90,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cart.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cart.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/public/pages/cart.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="440">
@@ -190,11 +187,11 @@
         <option value="$PROJECT_DIR$/resources/views/public/pages/shop.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PublicController.php" />
         <option value="$PROJECT_DIR$/resources/views/AN-e-commerce-master/single-product.html" />
-        <option value="$PROJECT_DIR$/resources/views/public/pages/single.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/includes/header.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" />
         <option value="$PROJECT_DIR$/resources/views/public/pages/cart.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/pages/single.blade.php" />
       </list>
     </option>
   </component>
@@ -573,12 +570,12 @@
       <workItem from="1551015337929" duration="4595000" />
       <workItem from="1551102524155" duration="6476000" />
       <workItem from="1551155911881" duration="11593000" />
-      <workItem from="1551242499870" duration="18277000" />
+      <workItem from="1551242499870" duration="18560000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76794000" />
+    <option name="totallyTimeSpent" value="77077000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1936" height="1038" extended-state="0" />
@@ -978,31 +975,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/pages/single.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-          <folding>
-            <element signature="e#3187#3193#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/AN-e-commerce-master/single-product.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9190">
           <caret line="429" column="147" lean-forward="false" selection-start-line="429" selection-start-column="147" selection-end-line="429" selection-end-column="147" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/includes/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="102" column="50" lean-forward="true" selection-start-line="102" selection-start-column="50" selection-end-line="102" selection-end-column="50" />
-          <folding>
-            <marker date="1551296866744" expanded="true" signature="5656:5805" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1037,6 +1014,26 @@
         <state relative-caret-position="440">
           <caret line="98" column="61" lean-forward="false" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/includes/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="102" column="50" lean-forward="true" selection-start-line="102" selection-start-column="50" selection-end-line="102" selection-end-column="50" />
+          <folding>
+            <marker date="1551296866744" expanded="true" signature="5656:5805" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/pages/single.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="94" column="41" lean-forward="false" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="41" />
+          <folding>
+            <element signature="e#3187#3193#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
