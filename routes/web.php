@@ -17,8 +17,7 @@ Route::get('/', function () {
 Route::view('/contact', 'public.pages.contact');
 Route::view('/order', 'public.pages.orders');
 Route::view('/order-details', 'public.pages.orderDetails');
-Route::view('/shop', 'public.pages.shop');
-Route::view('/single', 'public.pages.single');
+///Route::view('/single', 'public.pages.single');
 Route::view('/cart', 'public.pages.cart');
 Route::view('/account', 'public.pages.account');
 Route::view('/checkout', 'public.pages.checkout');
@@ -28,17 +27,25 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/shop', 'PublicController@shop');
+    Route::get('/product/{slug}', 'PublicController@getProduct');
+    Route::get('/shopByCategory/{category}', 'PublicController@shopByCategory');
+});
+
+
+
 
 Route::group(['prefix' => 'admin'], function () {
-  Route::get('/login', 'AdminAuth\LoginController@showLoginForm')->name('login');
-  Route::post('/login', 'AdminAuth\LoginController@login');
-  Route::get('/logout', 'AdminAuth\LoginController@logout')->name('logout');
+      Route::get('/login', 'AdminAuth\LoginController@showLoginForm')->name('login');
+      Route::post('/login', 'AdminAuth\LoginController@login');
+      Route::get('/logout', 'AdminAuth\LoginController@logout')->name('logout');
 
-  Route::get('/register', 'AdminAuth\RegisterController@showRegistrationForm')->name('register');
-  Route::post('/register', 'AdminAuth\RegisterController@register');
+      Route::get('/register', 'AdminAuth\RegisterController@showRegistrationForm')->name('register');
+      Route::post('/register', 'AdminAuth\RegisterController@register');
 
-  Route::post('/password/email', 'AdminAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
-  Route::post('/password/reset', 'AdminAuth\ResetPasswordController@reset')->name('password.email');
-  Route::get('/password/reset', 'AdminAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
-  Route::get('/password/reset/{token}', 'AdminAuth\ResetPasswordController@showResetForm');
+      Route::post('/password/email', 'AdminAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
+      Route::post('/password/reset', 'AdminAuth\ResetPasswordController@reset')->name('password.email');
+      Route::get('/password/reset', 'AdminAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
+      Route::get('/password/reset/{token}', 'AdminAuth\ResetPasswordController@showResetForm');
 });

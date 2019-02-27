@@ -1,8 +1,8 @@
 @extends('public.layouts.public')
-@section('title', 'Cart')
+@section('title', 'Shop')
 @extends('public.includes.bread')
-@section('url', '/cart')
-@section('page', 'Cart')
+@section('url', '/shop')
+@section('page', 'Shop')
 @section('content')
     <!--================Category Product Area =================-->
     <section class="cat_product_area section_gap">
@@ -11,12 +11,12 @@
                 <div class="col-lg-9">
                     <div class="product_top_bar">
                         <div class="left_dorp"> <!--Keep this in a form-->
-                            <select class="sorting">
-                                <option value="1">Popularity</option>
-                                <option value="2">High to Low</option>
-                                <option value="4">Low to High</option>
-                            </select>
-                            <button type="submit" value="submit" class="btn submit_btn">Sort</button>
+                            {{--<select class="sorting">--}}
+                                {{--<option value="1">Popularity</option>--}}
+                                {{--<option value="2">High to Low</option>--}}
+                                {{--<option value="4">Low to High</option>--}}
+                            {{--</select>--}}
+                            {{--<button type="submit" value="submit" class="btn submit_btn">Sort</button>--}}
 
                         </div>
 
@@ -54,10 +54,17 @@
                         </div>
                     </div>
                     <div class="latest_product_inner row">
+                        @foreach($products as $product)
+
+
                         <div class="col-lg-3 col-md-3 col-sm-6">
                             <div class="f_p_item">
                                 <div class="f_p_img">
-                                    <img class="img-fluid" src="{{ asset('front/img/product/feature-product/f-p-1.jpg') }}" alt="">
+                                    @if($product->img1 == NULL)
+                                        <img class="img-fluid" src="{{ asset('front/img/product/feature-product/f-p-1.jpg') }}" alt="">
+                                    @else
+                                        <img class="img-fluid" src="{{ Storage::url($product->img1) }}" alt="Product">
+                                    @endif
                                     <div class="p_icon">
                                         <a href="#">
                                             <i class="lnr lnr-heart"></i>
@@ -67,12 +74,15 @@
                                         </a>
                                     </div>
                                 </div>
-                                <a href="#">
-                                    <h4>High End Jewellery</h4>
+                                <a href="/product/{{ $product->slug }}">
+                                    <h4>{{ $product->name }}</h4>
                                 </a>
-                                <h5>&#8377;150.00</h5>
+                                <h5>&#8377; {{ $product->new_price }}</h5>
                             </div>
                         </div>
+
+
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -84,70 +94,9 @@
                             <div class="widgets_inner">
                                 <ul class="list">
                                     <li>
-                                        <a href="#">Fruits and Vegetables</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Meat and Fish</a>
-                                        <ul class="list">
-                                            <li>
-                                                <a href="#">Frozen Fish</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Dried Fish</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Fresh Fish</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Meat Alternatives</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Meat</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Cooking</a>
-                                        <ul class="list">
-                                            <li>
-                                                <a href="#">Frozen Fish</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Dried Fish</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Fresh Fish</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Meat Alternatives</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Meat</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Beverages</a>
-                                        <ul class="list">
-                                            <li>
-                                                <a href="#">Frozen Fish</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Dried Fish</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Fresh Fish</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Meat Alternatives</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Meat</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Home and Cleaning</a>
+                                        @foreach($categories as $category)
+                                        <a href="/shopByCategory/{{ $category->category }}">{{ $category->category }}</a>
+                                        @endforeach
                                     </li>
                                 </ul>
                             </div>

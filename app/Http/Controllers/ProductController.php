@@ -22,25 +22,25 @@ class ProductController extends Controller
         if ($request->hasFile('img1'))
         {
             $file = $request->img1;
-            $path = $file->store('public/images/products');
+            $path = $file->store('public/images');
             $product->img1 = $path;
         }
         if ($request->hasFile('img2'))
         {
             $file = $request->img2;
-            $path = $file->store('public/images/products');
+            $path = $file->store('public/images');
             $product->img2 = $path;
         }
         if ($request->hasFile('img3'))
         {
             $file = $request->img3;
-            $path = $file->store('public/images/products');
+            $path = $file->store('public/images');
             $product->img3 = $path;
         }
         if ($request->hasFile('brochure'))
         {
             $file = $request->brochure;
-            $path = $file->store('public/documents/products');
+            $path = $file->store('public/documents');
             $product->brochure = $path;
         }
         $product->save();

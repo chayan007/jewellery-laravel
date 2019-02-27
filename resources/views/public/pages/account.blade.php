@@ -1,7 +1,7 @@
 @extends('public.layouts.public')
 @section('title', 'Account')
 @extends('public.includes.bread')
-@section('url', '/account')
+@section('url', '/home')
 @section('page', 'Account')
 @section('content')
 
@@ -21,7 +21,7 @@
                             {{ Auth::user()->referral_number }}
                         </h3>
                     </div>
-                    <a class="genric-btn danger radius" href="/deleteAccount">Delete Account</a>
+                    <a class="genric-btn danger radius" href="/deleteAccount/{{ Auth::user()->id }}">Delete Account</a>
                 </div>
             </div>
         </div>
