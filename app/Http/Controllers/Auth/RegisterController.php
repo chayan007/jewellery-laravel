@@ -53,7 +53,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'referral_number' => ['required', 'string', 'min:8', 'max:8', 'unique:users'],
+            'referral_number' => ['string', 'unique:users'],
         ]);
     }
 
@@ -65,11 +65,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $referral = str(rand(10000000, 99999999));
+        //$referral = str();
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'referral_number' => $referral,
+            'referral_number' => rand(10000000, 99999999),
             'password' => Hash::make($data['password']),
         ]);
     }

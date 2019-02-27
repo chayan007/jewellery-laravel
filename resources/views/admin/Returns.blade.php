@@ -22,29 +22,21 @@
                     <tr>
                         <th>Serial</th>
                         <th>Order</th>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Customer</th>
                         <th>Agent</th>
-                        <th>Address</th>
-                        <th>Price</th>
+                        <th>Reason</th>
                         <th>Mark Complete</th>
                         <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($orders as $order)
+                    @foreach($returns as $return)
                         <tr>
                             <td> {{ $loop->iteration }}</td>
-                            <td>{{ $order->order }}</td>
-                            <td>{{ DB::table('products')->where('id', $order->product)->first()->name }}</td>
-                            <td>{{ $order->quantity }}</td>
-                            <td>{{ DB::table('customers')->where('id', $order->customer)->first()->name }}</td>
-                            <td>{{ DB::table('users')->where('id', $order->user)->first()->name }}</td>
-                            <td>{{ DB::table('customers')->where('id', $order->customer)->first()->address }}</td>
-                            <td>{{ DB::table('products')->where('id', $order->product)->first()->price }}</td>
-                            <td><a class="btn btn-success" href="/mark/{{ $order->id }}" role="button"></a></td>
-                            <td><a id="deletebtn" class="btn btn-outline-danger btn-sm" href="/deleteOrder/{{ $order->id }}" role="button">Delete</a></td>
+                            <td>{{ $return->order }}</td>
+                            <td>{{ DB::table('users')->where('id', $return->user)->first()->name }}</td>
+                            <td>{{ $return->reason }}</td>
+                            <td><a class="btn btn-success" href="/markReturn/{{ $return->id }}" role="button"></a></td>
+                            <td><a id="deletebtn" class="btn btn-outline-danger btn-sm" href="/deleteOrder/{{ $return->id }}" role="button">Delete</a></td>
                         </tr>
                     @endforeach
                     </tbody>
