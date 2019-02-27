@@ -65,7 +65,7 @@
                             </button>
                         </div>
                         <div class="card_area">
-                            <a class="main_btn" href="#">Add to Cart</a>
+                            <button class="main_btn" type="submit">Add to Cart</button>
                             {{--Convert it to submit button--}}
                         </div>
                         </form>

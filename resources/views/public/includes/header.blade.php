@@ -86,11 +86,11 @@
                                     </ul>
                                 </li>
                                 -->
-                                <li class="nav-item submenu dropdown">
+                                <!--<li class="nav-item submenu dropdown">
                                     <a href="/about" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
-                                </li>
+                                </li> -->
                                 <li  class="nav-item submenu dropdown">
-                                    <a href="/contact" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <!-- Home page-->
+                                    <a href="/contact" class="nav-link"> <!-- Home page-->
                                         Contact Us
                                     </a>
                                 </li>
