@@ -22,7 +22,7 @@ class OrderController extends Controller
         $order->product = $product;
         $order->user = $user;
         $order->save();
-        return back();
+        return back()->with('status', 'Product has been added to Cart !');
     }
 
     public function addCustomer(Request $request)

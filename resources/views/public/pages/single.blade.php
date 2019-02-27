@@ -7,7 +7,12 @@
     <!--================Single Product Area =================-->
     <div class="product_image_area">
         <div class="container">
-            <div class="row s_product_inner">
+            @if(session('status'))
+                <div class="alert alert-success" role="alert">
+                    <strong>{{ session('status') }}</strong>
+                </div>
+            @endif
+                <div class="row s_product_inner">
                 <div class="col-lg-6">
                     <div class="s_product_img">
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -54,7 +59,8 @@
                         <div class="product_count">
                             <label for="qty">Quantity:</label>
                             <form action="/addToCart/{{ $product->id }}" method="POST">
-                            <input type="text" name="quantity" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
+                                @csrf
+                             <input type="text" name="quantity" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
                             <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
                                     class="increase items-count" type="button">
                                 <i class="lnr lnr-chevron-up"></i>
