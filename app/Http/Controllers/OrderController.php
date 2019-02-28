@@ -58,7 +58,7 @@ class OrderController extends Controller
 
     public function showOrderReject()
     {
-        $orders = Order::where('order', 'Completed')->paginate(20);
+        $orders = Order::where('order', 'Delivered')->paginate(20);
         return view('admin.OrderReject', ['orders' => $orders]);
     }
 
@@ -95,6 +95,14 @@ class OrderController extends Controller
             ['user', Auth::user()->id]
         ])->get();
         return view('public.pages.checkout', ['orders' => $orders]);
+    }
+
+    public function markDone($id)
+    {
+        $order = Order::where('id', $id)->first();
+        $order->order = 'Delivered';
+        $order->save();
+        return redirect('/admin/reject');
     }
 
 }

@@ -43,6 +43,7 @@
                             <td><a href="{{ Storage::url($agent->verification_id) }}">Click Here</a> </td>
                             <td>{{ $agent->birth }}</td>
                             <td><img src="{{ Storage::url($agent->dp) }}" height="40px" width="50px"></td>
+                            <td>{{ $agent->created_at }}</td>
                             <td><a id="deletebtn" class="btn btn-outline-danger btn-sm" href="/admin/deleteAgent/{{ $agent->id }}" role="button">Delete</a></td>
                         </tr>
                     @endforeach

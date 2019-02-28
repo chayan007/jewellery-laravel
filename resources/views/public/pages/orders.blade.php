@@ -20,7 +20,7 @@
                                     </div>
                                     <div class="order_child_right col-4">
                                         <span>Order Date:</span>
-                                        <h4>{{ $order->updated_at }}</h4>
+                                        <h4>{{ \Carbon\Carbon::parse($order->created_at)->toFormattedDateString()  }}</h4>
                                     </div>
                                 </div>
                                 <div class="row">

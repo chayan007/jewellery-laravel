@@ -42,9 +42,9 @@
                             <td>{{ DB::table('customers')->where('id', $order->customer)->first()->name }}</td>
                             <td>{{ DB::table('users')->where('id', $order->user)->first()->name }}</td>
                             <td>{{ DB::table('customers')->where('id', $order->customer)->first()->address }}</td>
-                            <td>{{ DB::table('products')->where('id', $order->product)->first()->price }}</td>
-                            <td><a class="btn btn-success" href="/mark/{{ $order->id }}" role="button"></a></td>
-                            <td><a id="deletebtn" class="btn btn-outline-danger btn-sm" href="/deleteOrder/{{ $order->id }}" role="button">Delete</a></td>
+                            <td>{{ DB::table('products')->where('id', $order->product)->first()->new_price }}</td>
+                            <td><a class="btn btn-outline-success btn-sm" href="/admin/mark/{{ $order->id }}" role="button">Completed</a></td>
+                            <td><a id="deletebtn" class="btn btn-outline-danger btn-sm" href="/admin/deleteOrder/{{ $order->id }}" role="button">Delete</a></td>
                         </tr>
                     @endforeach
                     </tbody>
