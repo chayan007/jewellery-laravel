@@ -49,7 +49,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <h3>Customer Details</h3>
-                        <form class="row contact_form" action="/addCustomer" method="post" novalidate="novalidate">
+                        <form class="row contact_form" action="/addToOrder" method="post" novalidate="novalidate">
                             @csrf
                             <div class="col-md-6 form-group p_star">
                                 <input type="text" class="form-control" id="first" name="fname">
