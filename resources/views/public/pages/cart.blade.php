@@ -149,7 +149,9 @@
                             <td>
                                 <div class="checkout_btn_inner">
                                     <a class="gray_btn" href="/shop">Continue Shopping</a>
-                                    <a class="main_btn" href="/checkout">Proceed to checkout</a>
+                                    @if(count($orders) != 0)
+                                        <a class="main_btn" href="/checkout">Proceed to checkout</a>
+                                    @endif
                                 </div>
                             </td>
                             <td>

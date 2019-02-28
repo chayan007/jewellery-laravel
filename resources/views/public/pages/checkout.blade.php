@@ -126,6 +126,7 @@
                                 </div>
                                 <textarea class="form-control" name="message" id="message" rows="1" placeholder="Order Notes"></textarea>
                             </div>-->
+                            <button type="submit" class="main_btn" style="margin: 5px;">Confirm Order</button>
                         </form>
                     </div>
                     <div class="col-lg-4">
@@ -186,7 +187,6 @@
                                 <label for="f-option4">I’ve read and accept the </label>
                                 <a href="#">terms & conditions*</a>
                             </div>-->
-                            <button type="submit" class="main_btn">Confirm Order</button>
                         </div>
                     </div>
                 </div>

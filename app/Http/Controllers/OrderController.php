@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use function GuzzleHttp\Psr7\str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Psy\Util\Str;
 
 class OrderController extends Controller
 {
@@ -25,7 +26,7 @@ class OrderController extends Controller
         return back()->with('status', 'Product has been added to Cart !');
     }
 
-    public function addToOrder(Request $request, $id)
+    public function addToOrder(Request $request)
     {
         //customer details added
         $customer = new Customer();
@@ -36,13 +37,13 @@ class OrderController extends Controller
         $customer->save();
 
         //order details added
-        $orders = Order::where('user', $id)->get();
+        $orders = Order::where('user', Auth::user()->id)->get();
         foreach ($orders as $order)
         {
             $order->order = "Order Placed";
             $order->customer = Customer::where('email', $request->email)->firstOrFail()->id;
             $order->expected = Carbon::now()->addDays(7);
-            $number = $request->name.' '.str(rand(0,255));
+            $number = Str::random(8);
             $order->token = str_slug($number,'-');
             $order->save();
         }

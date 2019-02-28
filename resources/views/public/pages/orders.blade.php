@@ -9,52 +9,47 @@
         <div class="container">
             <div class="order_list">
                 <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                        <a href="/orderDetails" class="each_order">
-                            <div class="row">
-                                <div class="order_child_left col-8">
-                                    <span>Order No.</span>
-                                    <h4>{{ $order->order }}</h4>
-                                </div>
-                                <div class="order_child_right col-4">
-                                    <span>Order Date:</span>
-                                    <h4>23/03/19</h4>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="order_child_left col-8">
-                                    <span>Customer Name</span>
-                                    <h4>John Doe</h4>
-                                </div>
-                                <div class="order_child_right col-4">
-                                    <span>Order Status: </span>
-                                    <h4>Dispatched</h4>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="order_child_left col-8">
-                                    <ol class="order-items">
-                                        <li>
-                                            <h5>Item nuumber 12</h5>
-                                        </li>
-                                        <li>
-                                            <h5>Item nuumber 12?Lets pretend the full name is very nig</h5>
-                                        </li>
-                                        <li>
-                                            <h5>Gold Plated ring which doe not exist</h5>
 
-                                        </li>
-                                    </ol>
+                    @foreach($orders as $order)
+                        <div class="col-lg-6 col-md-12">
+                            <a href="#" class="each_order">
+                                <div class="row">
+                                    <div class="order_child_left col-8">
+                                        <span>Order No.</span>
+                                        <h4>{{ $order->token }}</h4>
+                                    </div>
+                                    <div class="order_child_right col-4">
+                                        <span>Order Date:</span>
+                                        <h4>{{ $order->updated_at }}</h4>
+                                    </div>
                                 </div>
-                                <div class="order_child_right col-4">
-                                    <span>Total Amount</span>
-                                    <h4>&#8377 1500</h4>
+                                <div class="row">
+                                    <div class="order_child_left col-8">
+                                        <span>Customer Name</span>
+                                        <h4>{{ DB::table('customers')->where('id', $order->customer)->first()->name }}</h4>
+                                    </div>
+                                    <div class="order_child_right col-4">
+                                        <span>Order Status: </span>
+                                        <h4>{{ $order->status }}</h4>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                                <div class="row">
+                                    <div class="order_child_left col-8">
+                                        <ol class="order-items">
+                                            <li>
+                                                <h5>{{ DB::table('products')->where('id', $order->product)->first()->name }}</h5>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="order_child_right col-4">
+                                        <span>Total Amount</span>
+                                        <h4>&#8377 @php echo $pro_price = ($order->quantity * DB::table('products')->where('id', $order->product)->first()->new_price);  @endphp</h4>
+                                    </div>
+                                </div>
+                            </a>
 
-                    </div>
-
+                        </div>
+                    @endforeach
 
                 </div>
 

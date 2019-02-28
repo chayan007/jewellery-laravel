@@ -25,7 +25,7 @@ class CreateOrdersTable extends Migration
             $table->unsignedInteger('user');
             $table->foreign('user')->references('id')->on('users');
             $table->date('expected')->nullable();
-            $table->string('token')->nullable();
+            $table->string('token')->unique()->nullable();
             $table->timestamps();
         });
     }
