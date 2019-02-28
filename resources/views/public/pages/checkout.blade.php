@@ -73,6 +73,7 @@
                                 <input type="text" class="form-control" id="email" name="email">
                                 <span class="placeholder" data-placeholder="Email Address"></span>
                             </div>
+                            @php $price = 0; @endphp
                             <!--
                                 <div class="col-md-12 form-group p_star">
                                 <select class="country_select">
@@ -136,39 +137,30 @@
                                         <span>Total</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">Fresh Blackberry
-                                        <span class="middle">x 02</span>
-                                        <span class="last">&#8377;720.00</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">Fresh Tomatoes
-                                        <span class="middle">x 02</span>
-                                        <span class="last">&#8377;720.00</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">Fresh Brocoli
-                                        <span class="middle">x 02</span>
-                                        <span class="last">&#8377;720.00</span>
-                                    </a>
-                                </li>
+                                @foreach($orders as $order)
+                                    <li>
+                                        <a href="/product/{{ DB::table('products')->where('id', $order->product)->first()->slug }}">{{ DB::table('products')->where('id', $order->product)->first()->name }}
+                                            <span class="middle"> x {{ $order->quantity }}</span>
+                                            <span class="last">&#8377;@php echo $pro_price = ($order->quantity * DB::table('products')->where('id', $order->product)->first()->new_price);  @endphp</span>
+                                        </a>
+                                    </li>
+                                    @php $price = $price + $pro_price @endphp
+                                @endforeach
                             </ul>
                             <ul class="list list_2">
-                                <li>
-                                    <a href="#">Subtotal
-                                        <span>&#8377;2160.00</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">Shipping
-                                        <span>Flat rate: &#8377;50.00</span>
-                                    </a>
-                                </li>
+                                {{--<li>--}}
+                                    {{--<a href="#">Subtotal--}}
+                                        {{--<span>&#8377;2160.00</span>--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<a href="#">Shipping--}}
+                                        {{--<span>Flat rate: &#8377;50.00</span>--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
                                 <li>
                                     <a href="#">Total
-                                        <span>&#8377;2210.00</span>
+                                        <span>&#8377;@php echo $price; @endphp</span>
                                     </a>
                                 </li>
                             </ul>

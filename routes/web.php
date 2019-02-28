@@ -31,6 +31,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/shop', 'PublicController@shop');
     Route::get('/cart', 'OrderController@showCartToUser');
     Route::get('/orders', 'OrderController@showOrderToUser');
+    Route::get('/checkout', 'OrderController@showCheckout');
     Route::get('/product/{slug}', 'PublicController@getProduct');
     Route::post('/addToCart/{id}', 'OrderController@addToCart');
     Route::post('/updateCart/{id}', 'OrderController@updateCart');

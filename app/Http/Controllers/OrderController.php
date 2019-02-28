@@ -25,19 +25,17 @@ class OrderController extends Controller
         return back()->with('status', 'Product has been added to Cart !');
     }
 
-    public function addCustomer(Request $request)
-    {
-        $customer = new Customer();
-        $customer->name = $request->name;
-        $customer->email = $request->email;
-        $customer->phone = $request->phone;
-        $customer->address = $request->address;
-        $customer->save();
-        return view();
-    }
-
     public function addToOrder(Request $request, $id)
     {
+        //customer details added
+        $customer = new Customer();
+        $customer->name = $request->fname.' '.$request->lname;
+        $customer->email = $request->email;
+        $customer->phone = $request->phone;
+        $customer->address = $request->address.' \n'.$request->city.' \n'.$request->zip;
+        $customer->save();
+
+        //order details added
         $orders = Order::where('user', $id)->get();
         foreach ($orders as $order)
         {
@@ -48,7 +46,7 @@ class OrderController extends Controller
             $order->token = str_slug($number,'-');
             $order->save();
         }
-        return back();
+        return redirect('/orders');
     }
 
     public function showOrders()
