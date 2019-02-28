@@ -69,7 +69,7 @@ class OrderController extends Controller
             ['order', 'Order Placed'],
             ['user', Auth::user()->id]
         ])->get();
-        return view('orders', ['orders' => $orders]);
+        return view('public.pages.orders', ['orders' => $orders]);
     }
 
     public function showCartToUser()
@@ -87,6 +87,15 @@ class OrderController extends Controller
         $order->quantity = $request->quantity;
         $order->save();
         return back()->with('status', 'Your cart has been updated !');
+    }
+
+    public function showCheckout()
+    {
+        $orders = Order::where([
+            ['order', 'In Cart'],
+            ['user', Auth::user()->id]
+        ])->get();
+        return view('public.pages.checkout', ['orders' => $orders]);
     }
 
 }

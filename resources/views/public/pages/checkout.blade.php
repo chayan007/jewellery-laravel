@@ -49,14 +49,14 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <h3>Customer Details</h3>
-                        <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                        <form class="row contact_form" action="/addCustomer" method="post" novalidate="novalidate">
                             @csrf
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="first" name="name">
+                                <input type="text" class="form-control" id="first" name="fname">
                                 <span class="placeholder" data-placeholder="First name"></span>
                             </div>
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="last" name="name">
+                                <input type="text" class="form-control" id="last" name="lname">
                                 <span class="placeholder" data-placeholder="Last name"></span>
                             </div>
                             <!--
@@ -65,12 +65,12 @@
                             </div>
                             -->
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="number" name="number">
+                                <input type="text" class="form-control" id="number" name="phone">
                                 <span class="placeholder" data-placeholder="Phone number"></span>
                             </div>
 
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="email" name="compemailany">
+                                <input type="text" class="form-control" id="email" name="email">
                                 <span class="placeholder" data-placeholder="Email Address"></span>
                             </div>
                             <!--
@@ -83,7 +83,7 @@
                             </div>
                             -->
                             <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="add1" name="add1">
+                                <input type="text" class="form-control" id="add1" name="address">
                                 <span class="placeholder" data-placeholder="Complete Address"></span>
                             </div>
                             <!--
@@ -194,7 +194,7 @@
                                 <label for="f-option4">I’ve read and accept the </label>
                                 <a href="#">terms & conditions*</a>
                             </div>-->
-                            <a class="main_btn" href="/confirmOrder">Confirm Order</a>
+                            <button type="submit" class="main_btn">Confirm Order</button>
                         </div>
                     </div>
                 </div>

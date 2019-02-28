@@ -14,7 +14,7 @@
                             <div class="row">
                                 <div class="order_child_left col-8">
                                     <span>Order No.</span>
-                                    <h4>52435</h4>
+                                    <h4>{{ $order->order }}</h4>
                                 </div>
                                 <div class="order_child_right col-4">
                                     <span>Order Date:</span>
