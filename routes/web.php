@@ -37,6 +37,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/addToOrder', 'OrderController@addToOrder');
     Route::post('/updateCart/{id}', 'OrderController@updateCart');
     Route::get('/shopByCategory/{category}', 'PublicController@shopByCategory');
+    Route::get('/logout', function(){
+        Auth::logout();
+        return redirect('/');
+    });
 });
 
 
