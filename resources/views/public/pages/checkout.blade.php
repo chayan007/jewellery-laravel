@@ -52,12 +52,10 @@
                         <form class="row contact_form" action="/addToOrder" method="post" novalidate="novalidate">
                             @csrf
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="first" name="fname">
-                                <span class="placeholder" data-placeholder="First name"></span>
+                                <input type="text" class="form-control" id="first" name="fname" placeholder="First Name">
                             </div>
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="last" name="lname">
-                                <span class="placeholder" data-placeholder="Last name"></span>
+                                <input type="text" class="form-control" id="last" name="lname" placeholder="Last Name">
                             </div>
                             <!--
                             <div class="col-md-12 form-group">
@@ -65,13 +63,11 @@
                             </div>
                             -->
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="number" name="phone">
-                                <span class="placeholder" data-placeholder="Phone number"></span>
+                                <input type="text" class="form-control" id="number" name="phone" placeholder="Phone">
                             </div>
 
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="email" name="email">
-                                <span class="placeholder" data-placeholder="Email Address"></span>
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Email">
                             </div>
                             @php $price = 0; @endphp
                             <!--
@@ -84,8 +80,7 @@
                             </div>
                             -->
                             <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="add1" name="address">
-                                <span class="placeholder" data-placeholder="Complete Address"></span>
+                                <input type="text" class="form-control" id="add1" name="address" placeholder="Complete Address">
                             </div>
                             <!--
                                 <div class="col-md-12 form-group p_star">
@@ -94,8 +89,7 @@
                             </div>
                             -->
                             <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="city" name="city">
-                                <span class="placeholder" data-placeholder="Town/City"></span>
+                                <input type="text" class="form-control" id="city" name="city" placeholder="Town/City">
                             </div>
                             <!--
                                 <div class="col-md-12 form-group p_star">
