@@ -93,11 +93,11 @@
                             </div>
                             <div class="widgets_inner">
                                 <ul class="list">
-                                    <li>
                                         @foreach($categories as $category)
-                                        <a href="/shopByCategory/{{ $category->category }}">{{ $category->category }}</a>
+                                        <li>
+                                            <a href="/shopByCategory/{{ $category->category }}">{{ $category->category }}</a>
+                                        </li>
                                         @endforeach
-                                    </li>
                                 </ul>
                             </div>
                         </aside>
