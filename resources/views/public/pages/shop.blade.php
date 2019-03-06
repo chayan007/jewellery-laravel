@@ -21,37 +21,9 @@
                         </div>
 
 
-                        <div class="right_page ml-auto">
-                            <nav class="cat_page" aria-label="Page navigation example">
-                                <ul class="pagination">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">
-                                            <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <li class="page-item active">
-                                        <a class="page-link" href="#">1</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">2</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">3</a>
-                                    </li>
-                                    <li class="page-item blank">
-                                        <a class="page-link" href="#">...</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">6</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">
-                                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
+                        {{ $products->links() }}
+
+
                     </div>
                     <div class="latest_product_inner row">
                         @foreach($products as $product)
@@ -161,35 +133,7 @@
             </div>
 
             <div class="row">
-                <nav class="cat_page mx-auto" aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#">
-                                <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">01</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">02</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">03</a>
-                        </li>
-                        <li class="page-item blank">
-                            <a class="page-link" href="#">...</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">09</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">
-                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                {{ $products->links() }}
             </div>
         </div>
     </section>
