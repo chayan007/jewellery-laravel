@@ -24,7 +24,7 @@ class PublicController extends Controller
     {
         $user = User::where('id', Auth::id())->first();
         $file = $request->id;
-        $path = $file->store('verification');
+        $path = $file->store('public/verification');
         $user->verification_id= $path;
         $user->save();
         return back();

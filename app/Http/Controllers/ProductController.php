@@ -22,21 +22,21 @@ class ProductController extends Controller
         if ($request->hasFile('img1'))
         {
             $file = $request->img1;
-            $path = $file->store('products');
+            $path = $file->store('public/images');
             $product->img1 = $path;
             $product->save();
         }
         if ($request->hasFile('img2'))
         {
             $file = $request->img2;
-            $path = $file->store('products');
+            $path = $file->store('public/images');
             $product->img2 = $path;
             $product->save();
         }
         if ($request->hasFile('img3'))
         {
             $file = $request->img3;
-            $path = $file->store('products');
+            $path = $file->store('public/images');
             $product->img3 = $path;
             $product->save();
         }
