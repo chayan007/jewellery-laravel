@@ -21,6 +21,16 @@
                             {{ Auth::user()->referral_number }}
                         </h3>
                     </div>
+                    <form action="/uploadAccount/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                            <label for="verify">Upload Verification ID</label>
+                            <input type="file" class="form-control-file" name="id" id="verify" placeholder=""
+                                   aria-describedby="fileHelpId">
+                            <small id="fileHelpId" class="form-text text-muted">Not uploading might result in permanent loss of membership</small>
+                        </div>
+                        <a class="genric-btn info radius" type="submit">Send for Verification</a>
+                    </form>
                     <a class="genric-btn danger radius" href="/deleteAccount/{{ Auth::user()->id }}">Delete Account</a>
                 </div>
             </div>
