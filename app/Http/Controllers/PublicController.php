@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Product;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PublicController extends Controller
 {
@@ -16,6 +18,16 @@ class PublicController extends Controller
     public function contactUs(Request $request)
     {
 
+    }
+
+    public function uploadVerification(Request $request)
+    {
+        $user = User::where('id', Auth::id())->first();
+        $file = $request->id;
+        $path = $file->store('verification');
+        $user->verification_id= $path;
+        $user->save();
+        return back();
     }
 
     public function shop()
